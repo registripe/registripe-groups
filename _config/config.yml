@@ -1,0 +1,18 @@
+---
+name: registripe_group
+---
+EventAttendee:
+  extensions:
+    - EventAttendeeGroupExtension
+EventTicket:
+  extensions:
+    - EventTicketGroupExtension
+
+EventRegisterController:
+  extensions:
+    - EventRegisterControllerGroupExtension
+    
+RegistrationGroupController:
+  ticket_select_template: TicketCountSelections
+  extensions:
+    - TicketSelectorControllerExtension
