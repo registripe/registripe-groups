@@ -6,4 +6,8 @@ class EventAttendeeGroupExtension extends DataExtension{
 		'Group' => 'RegistrationGroup'
 	);
 
+	public function updateFrontEndFields(FieldList $fields) {
+		$fields->removeByName(array("GroupID"));
+	}
+
 }

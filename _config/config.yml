@@ -7,6 +7,9 @@ EventAttendee:
 EventTicket:
   extensions:
     - EventTicketGroupExtension
+TicketSelection:
+  extensions:
+    - RegistrationGroupTicketSelectionExtension
 
 EventRegisterController:
   extensions:
@@ -14,5 +17,6 @@ EventRegisterController:
     
 RegistrationGroupController:
   ticket_select_template: TicketCountSelections
-  extensions:
-    - TicketSelectorControllerExtension
+
+RegistrationGroupEventTicket:
+  selection_type: RegistrationGroupTicketSelection
