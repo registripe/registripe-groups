@@ -14,16 +14,15 @@ class RegistrationGroupForm extends Form {
 		$fields->push(
 			new HiddenField("ID")
 		);
-		$actions = new FieldList(
-			new FormAction("save", "Next Step")
-		);
+		$actions = new FieldList();
 		//default required fields are configurable
 		$required = RegistrationGroup::config()->required_fields;
 		if(!$required){
 			$required = array();
 		}
-		$required[] = "TicketID"; //ticket is always required
+		// $required[] = "TicketID"; //ticket is always required
 		$validator = new RequiredFields($required);
+		
 
 		parent::__construct($controller, $name, $fields, $actions, $validator);
 		$this->extend("updateForm", $this);
