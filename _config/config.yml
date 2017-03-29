@@ -4,9 +4,7 @@ name: registripe_group
 EventAttendee:
   extensions:
     - EventAttendeeGroupExtension
-EventTicket:
-  extensions:
-    - EventTicketGroupExtension
+
 TicketSelection:
   extensions:
     - RegistrationGroupTicketSelectionExtension
