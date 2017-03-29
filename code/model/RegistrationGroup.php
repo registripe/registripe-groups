@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Group attendees with an associated ticket.
+ */
 class RegistrationGroup extends DataObject
 {
 

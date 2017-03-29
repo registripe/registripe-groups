@@ -2,6 +2,10 @@
 
 class RegistrationGroupTicketSelection extends TicketSelection {
 
+	private static $has_one = array(
+		'Group' => 'RegistrationGroup'
+	);
+
 	private static $has_many = array(
 		'TicketSelections' => 'TicketSelection'
 	);
@@ -10,7 +14,7 @@ class RegistrationGroupTicketSelection extends TicketSelection {
 	 * Creates a ticket selection data object.
 	 */
 	public function createSelection($ticket) {
-		$class = Config::inst()->get(get_class($ticket), 'selection_type');
+		$class = $ticket->stat('selection_type');
 		$selection = $class::create();
 		$selection->GroupID = $this->owner->ID;
 		$selection->TicketID = $ticket->ID;

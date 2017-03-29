@@ -9,6 +9,10 @@ TicketSelection:
   extensions:
     - RegistrationGroupTicketSelectionExtension
 
+RegistrationGroupTicketSelection:
+  calculators:
+    - GroupTicketSelection
+
 EventRegisterController:
   extensions:
     - EventRegisterControllerGroupExtension
