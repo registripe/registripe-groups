@@ -9,7 +9,12 @@ TicketSelection:
   extensions:
     - RegistrationGroupTicketSelectionExtension
 
+TicketSelectionController:
+  extensions:
+    - RegistrationGroupTicketSelectionControllerExtension
+
 RegistrationGroupTicketSelection:
+  select_controller_action: group
   calculators:
     - GroupTicketSelection
 
@@ -22,3 +27,4 @@ RegistrationGroupController:
 
 RegistrationGroupEventTicket:
   selection_type: RegistrationGroupTicketSelection
+

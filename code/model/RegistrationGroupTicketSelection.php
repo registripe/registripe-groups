@@ -10,6 +10,8 @@ class RegistrationGroupTicketSelection extends TicketSelection {
 		'TicketSelections' => 'TicketSelection'
 	);
 
+	private static $select_controller_action = "group";
+
 	/**
 	 * Creates a ticket selection data object.
 	 */
