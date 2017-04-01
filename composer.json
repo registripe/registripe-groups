@@ -1,0 +1,18 @@
+{
+	"name": "registripe/registripe-groups",
+	"description": "Groups sub-module for RegiStripe module",
+	"type": "silverstripe-module",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Jeremy Shipman",
+			"email": "jeremy@burnbright.net"
+		}
+	],
+	"require": {
+		"registripe/registripe-core": "*"
+	},
+	"extra": {
+		"installer-name": "registripe_groups"
+	}
+}
