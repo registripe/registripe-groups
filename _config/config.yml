@@ -15,7 +15,7 @@ TicketSelectionController:
 
 RegistrationGroupTicketSelection:
   select_controller_action: group
-  calculators:
+  default_calculators:
     - GroupTicketSelection
 
 EventRegisterController:
