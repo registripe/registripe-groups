@@ -2,17 +2,11 @@
 
 namespace EventRegistration\Calculator;
 
-class GroupTicketSelectionCalculator extends AbstractCalculator {
+class GroupTicketSelectionCalculator extends SelectionsCalculator {
 
-	protected $selectionGroup;
-
-	public function __construct(\RegistrationGroupTicketSelection $selectionGroup) {
-		$this->selectionGroup = $selectionGroup;
-	}
-
-	public function calculate($value) {
-		$calculator = new SelectionsCalculator($this->selectionGroup->TicketSelections());
-		return $calculator->calculate($value);
+	public function __construct(\RegistrationGroupTicketSelection $groupSelection) {
+		$this->groupSelection = $groupSelection;
+		parent::__construct($groupSelection->TicketSelections());
 	}
 
 }
