@@ -20,10 +20,7 @@ class RegistrationGroupForm extends Form {
 		if(!$required){
 			$required = array();
 		}
-		// $required[] = "TicketID"; //ticket is always required
 		$validator = new RequiredFields($required);
-		
-
 		parent::__construct($controller, $name, $fields, $actions, $validator);
 		$this->extend("updateForm", $this);
 	}
