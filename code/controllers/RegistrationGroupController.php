@@ -85,6 +85,7 @@ class RegistrationGroupController extends Page_Controller{
 			));
 		}
 		$data = new ArrayData(array(
+			'Ticket' => $ticket,
 			'Tickets' => $tickets,
 			// ensure Ticket seleciton next link doesn't show // TODO: do without
 			'FirstSelectionLink' => false
@@ -106,9 +107,9 @@ class RegistrationGroupController extends Page_Controller{
 	 */
 	public function GroupForm() {
 		$form = new RegistrationGroupForm($this, "GroupForm");
-		$this->extend("updateGroupForm", $form, $this->registration);
 		$form->Actions()->push(AnchorField::create("cancellink", "Back", $this->BackURL));
 		$form->Actions()->push(FormAction::create("save", "Next"));
+		$this->extend("updateGroupForm", $form, $this->registration, $this->selection);
 		return $form;
 	}
 
