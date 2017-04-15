@@ -15,6 +15,7 @@ TicketSelectionController:
 
 RegistrationGroupTicketSelection:
   select_controller_action: group
+  redirect_on_add: true
   default_calculators:
     - GroupTicketSelection
 
@@ -27,4 +28,3 @@ RegistrationGroupController:
 
 RegistrationGroupEventTicket:
   selection_type: RegistrationGroupTicketSelection
-
