@@ -179,9 +179,9 @@ class RegistrationGroupController extends Page_Controller{
 			'URLSegment' => Controller::join_links($this->URLSegment, 'selection', $selection->ID),
 			'BackURL' => $backurl,
 			'NextURL' => $nexturl,
-			'Content' => $pager->customise(array(
+			'Content' => $pager->renderWith("TicketPageIndicator", array(
 				'Title' => $this->selection->Ticket()->Title
-			))->renderWith("TicketPageIndicator")
+			))
 		));
 		$controller = new TicketSelectionController($record, $registration, $selection);
 		$this->extend("updateTicketSelectionController", $controller, $record, $registration);
