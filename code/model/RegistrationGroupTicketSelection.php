@@ -12,6 +12,8 @@ class RegistrationGroupTicketSelection extends TicketSelection {
 
 	private static $select_controller_action = "group";
 
+	private static $row_template = "RegistrationGroupTicketSelection_row";
+
 	/**
 	 * Creates a ticket selection data object.
 	 */
@@ -23,6 +25,16 @@ class RegistrationGroupTicketSelection extends TicketSelection {
 		$selection->write();
 		$this->owner->TicketSelections()->add($selection);
 		return $selection;
+	}
+
+	public function RenderRow($baselink = "") {
+		// Don't render empty groups
+		if ($this->owner->TicketSelections()->count() === 0) {
+			return null;
+		}
+		return $this->renderWith($this->stat("row_template"), array(
+			"BaseLink" => $baselink."/selection/".$this->ID."/group"
+		));
 	}
 
 }
