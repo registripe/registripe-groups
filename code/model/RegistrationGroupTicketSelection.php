@@ -36,5 +36,18 @@ class RegistrationGroupTicketSelection extends TicketSelection {
 			"BaseLink" => $baselink."/selection/".$this->ID."/group"
 		));
 	}
+	
+	protected function onBeforeDelete() {
+		$selections = $this->TicketSelections();
+		$registration = $this->Registration();
+		if($selections->exists() && !$registration->isSubmitted()){
+			// completely destroy ticket selections
+			foreach ($selections as $selection) {
+				$selection->delete();
+				$selection->destroy();
+			}
+		}
+		parent::onBeforeDelete();
+	}
 
 }
